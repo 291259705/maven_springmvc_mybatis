@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mv.dao.Student_RecordMapper">
+
+    <resultMap id="StudentRecord" type="Student">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        
+        <collection ofType="Student_Record" property="records">
+            <id column="sub" property="subName" />
+            <result column="Score" property="Score" />
+            <result column="exaTime" property="exaTime" />
+        </collection>
+        
+
+    </resultMap>
+    <select id="getSutdentRecore" resultMap="StudentRecord">
+        select stu.*,sub.name as sub,rec.Score,rec.exaTime from Student stu
+            left join Student_Record rec on (stu.id=rec.stuId)
+            left join Student_Subject sub on (rec.subId=sub.id)
+        order by id asc
+    </select>
+
+</mapper>

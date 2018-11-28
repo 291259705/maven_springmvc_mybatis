@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!-- 加载属性文件 -->
+    <properties resource="config.properties">
+        <!--properties中还可以配置一些属性名和属性值 -->
+        <!-- <property name="jdbc.driver" value=""/> -->
+    </properties>
+
+    <!-- 全局配置参数，需要时再设置 -->
+    <settings>
+        <!--打开延时加载的开关-->
+        <setting name="lazyLoadingEnabled" value="true" />
+        <!--将积极加载改为消息加载即按需加载-->
+        <setting name="aggressiveLazyLoading" value="true" />
+
+        <!--启用二级红缓存-->
+        <setting name="cacheEnabled" value="true" />
+    </settings>
+
+    <typeAliases>
+        <!-- 别名定义 -->
+        <!-- 针对单个别名定义 type：类型的路径 alias：别名，类名不能写错
+         别名可以随便起，但最好规范-->
+        <!--<typeAlias type="com.mv.entity.Aging" alias="aging" />-->
+        <!-- 批量别名定义 指定包名，mybatis自动扫描包中的po类，自动定义别名，别名就是类名（首字母大写或小写都可以） -->
+        <package name="com.mv.entity" />
+    </typeAliases>
+
+    <!--插件-->
+    <plugins>
+        <!--添加分类插件-->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+
+    <!-- 和spring整合后 environments配置将废除 -->
+    <environments default="development">
+        <environment id="development">
+            <!-- 使用jdbc事务管理，事务控制由mybatis -->
+            <transactionManager type="JDBC" />
+            <!-- 数据库连接池，由mybatis管理 type=“POOLED” -->
+            <!--<dataSource type="POOLED">-->
+                <!--<property name="driver" value="${jdbc.driver}" />-->
+                <!--<property name="url" value="${jdbc.url}" />-->
+                <!--<property name="username" value="${jdbc.username}" />-->
+                <!--<property name="password" value="${jdbc.password}" />-->
+            <!--</dataSource>-->
+
+            <!--c3p0连接配置-->
+            <dataSource type="com.mv.utils.C3P0DataSourceFactory">
+                <property name="driverClass" value="${jdbc.driver}"/>
+                <property name="jdbcUrl" value="${jdbc.url}"/>
+                <property name="user" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+                <!-- 连接池初始化大小为3 -->
+                <property name="initialPoolSize" value="3"/>
+                <!-- 连接池最大为10 -->
+                <property name="maxPoolSize" value="10"/>
+                <!-- 连接池最小为3 -->
+                <property name="minPoolSize" value="3"/>
+                <!-- 连接池在无空闲连接可用时一次性最多创建的新数据库连接数  -->
+                <property name="acquireIncrement" value="5"/>
+                <!-- 连接的最大空闲时间，如果超过这个时间（秒），某个数据库连接还没有被使用，则会断开掉这个连接。如果为0，则永远不会断开连接,即回收此连接 -->
+                <property name="maxIdleTime" value="30"/>
+
+                <!-- 最大的Statement数量 -->
+                <property name="maxStatements" value="500"/>
+                <!-- 每个连接启动的最大Statement数量 -->
+                <property name="maxStatementsPerConnection" value="50"/>
+                <!-- 同时运行的线程数 -->
+                <property name="numHelperThreads" value="5"/>
+
+            </dataSource>
+
+        </environment>
+    </environments>
+
+
+    <!-- 加载映射文件 -->
+    <mappers>
+        <!--通过resource方法一次加载一个映射文件 -->
+        <!--注意这里的路径和xml文件 -->
+        <mapper resource="mappers/EmployeeMapper.xml" />
+        <mapper resource="mappers/StudentMapper.xml" />
+        <!--<mapper resource="mappers/Student_RecordMapper.xml" />-->
+
+        <!--<mapper class="com.mv.dao.StudentMapper" />-->
+        <mapper class="com.mv.dao.Student_RecordMapper" />
+        <mapper class="com.mv.dao.Student_SubjectMapper" />
+        <mapper class="com.mv.dao.CategoryMapper" />
+
+        <!-- 批量加载mapper 指定mapper接口的包名，mybatis自动扫描包下边所有mapper接口进行加载 -->
+        <!-- 遵循一些规范：需要将mapper接口类名和mapper.xml映射文件名称保持一致，且在一个目录 -->
+        <!-- 中上边规范的前提是：使用的是mapper代理方法-->
+        <!--<package name="mappers" />-->
+
+
+    </mappers>
+
+</configuration>

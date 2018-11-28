@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 指定数据连接驱动jar地址 -->
+    <classPathEntry location="D:\Program Files\IntelliJ IDEA 2018.2.5\plugins\maven\repository\mysql\mysql-connector-java\8.0.13\mysql-connector-java-8.0.13.jar" />
+    <context id="SqlTables" targetRuntime="MyBatis3">
+
+        <!-- 注释 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" /><!-- 是否取消注释 -->
+            <property name="suppressDate" value="true" /><!-- 是否生成注释代时间戳 -->
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/mv_db?serverTimezone=GMT" userId="root" password="liaoyang" />
+
+        <!-- 类型转换 -->
+        <javaTypeResolver>
+            <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 生成实体类地址 -->
+        <javaModelGenerator targetPackage="com.mv.entity"
+                            targetProject="D:\Java\demos\web-services-comm\src\main\java" >
+            <property name="enableSubPackages" value="false"/>
+            <!--设置父类 <property name="rootClass" value="cc.eguid.entity.baseEntity"/> -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--&lt;!&ndash; 生成mapxml文件 &ndash;&gt;-->
+        <!--<sqlMapGenerator targetPackage="resources.mappers"-->
+                         <!--targetProject="D:\Java\demos\web-services-comm\src\main" >-->
+            <!--&lt;!&ndash; 是否在当前路径下新加一层schema,eg：fase路径com.oop.eksp.user.model， true:com.oop.eksp.user.model.[schemaName] &ndash;&gt;-->
+            <!--<property name="enableSubPackages" value="false"/>-->
+        <!--</sqlMapGenerator>-->
+
+        <!--&lt;!&ndash; 生成mapxml对应client，也就是接口dao &ndash;&gt;-->
+        <!--<javaClientGenerator targetPackage="com.mv.dao"-->
+                             <!--targetProject="D:\Java\demos\web-services-comm\src\main\java" type="XMLMAPPER" >-->
+            <!--&lt;!&ndash; 是否在当前路径下新加一层schema,eg：fase路径com.oop.eksp.user.model， true:com.oop.eksp.user.model.[schemaName] &ndash;&gt;-->
+            <!--<property name="enableSubPackages" value="false"/>-->
+        <!--</javaClientGenerator>-->
+
+        <!-- 用户权限表 -->
+        <table tableName="employee"
+               schema="mv_db"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="student"
+               schema="mv_db"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="category"
+               schema="mv_db"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+    </context>
+</generatorConfiguration>

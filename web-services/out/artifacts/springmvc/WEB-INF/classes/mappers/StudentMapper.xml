@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mv.dao.StudentMapper">
+    <cache />
+    <sql id="Base_Column_List">
+        id,name,age,qq,wx,address,phone
+    </sql>
+    <select id="listStudent" resultType="com.mv.entity.Student">
+        select
+        <include refid="Base_Column_List"/>
+        from student
+    </select>
+    <select id="getStudentById" resultType="com.mv.entity.Student" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from student where id = #{id}
+    </select>
+
+    <select id="getStudentByWhere" resultType="com.mv.entity.Student">
+        select
+        <include refid="Base_Column_List"/>
+        from student
+        <trim prefix="WHERE" prefixOverrides=" AND |OR ">
+            <choose>
+                <when test="name!=null">
+                    <bind name="likeName" value="'%'+name+'%'" />
+                    name like #{likeName}
+                </when>
+                <when test="ids!=null">
+                    id in
+                    <foreach collection="ids" index="index" item="item" open="(" close=")" separator=",">
+                        #{item}
+                    </foreach>
+                </when>
+                <otherwise>
+                    id>1
+                </otherwise>
+            </choose>
+        </trim>
+    </select>
+
+    <select id="listPage" resultType="com.mv.entity.Student">
+        select
+        <include refid="Base_Column_List" />
+        from student
+        <if test="start!=null and count!=null">
+            limit #{start},#{count}
+        </if>
+
+    </select>
+
+    <insert id="addStudent" parameterType="com.mv.entity.Student">
+        insert into student
+        <trim prefix="(" suffix=")" prefixOverrides=",">
+            <if test="name!=null">
+                name,
+            </if>
+            <if test="age!=null">
+                age,
+            </if>
+            <if test="qq!=null">
+                qq,
+            </if>
+            <if test="wx!=null">
+                wx,
+            </if>
+            <if test="address!=null">
+                address,
+            </if>
+            <if test="phone!=null">
+                phone
+            </if>
+        </trim>
+        <trim prefix=" values (" suffix=")" prefixOverrides=",">
+            <if test="name!=null">
+                #{name},
+            </if>
+            <if test="age!=null">
+                #{age},
+            </if>
+            <if test="qq!=null">
+                #{qq},
+            </if>
+            <if test="wx!=null">
+                #{wx},
+            </if>
+            <if test="address!=null">
+                #{address},
+            </if>
+            <if test="phone!=null">
+                #{phone}
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delStudent" parameterType="com.mv.entity.Student">
+        delete from student where id = #{id}
+    </delete>
+
+</mapper>
