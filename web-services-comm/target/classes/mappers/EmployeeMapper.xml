@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mv.dao.EmployeeMapper" >
+  <resultMap id="BaseResultMap" type="com.mv.entity.Employee" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="duty_id" property="dutyId" jdbcType="INTEGER" />
+    <result column="duty" property="duty" jdbcType="VARCHAR" />
+    <result column="department_id" property="departmentId" jdbcType="INTEGER" />
+    <result column="department" property="department" jdbcType="VARCHAR" />
+    <result column="higher_department_id" property="higherDepartmentId" jdbcType="INTEGER" />
+    <result column="higher_department" property="higherDepartment" jdbcType="VARCHAR" />
+    <result column="leader_id" property="leaderId" jdbcType="BIGINT" />
+    <result column="leader" property="leader" jdbcType="VARCHAR" />
+    <result column="in_office" property="inOffice" jdbcType="INTEGER" />
+    <result column="office_status" property="officeStatus" jdbcType="INTEGER" />
+    <result column="infomation_type" property="infomationType" jdbcType="INTEGER" />
+    <result column="emergency_contact" property="emergencyContact" jdbcType="VARCHAR" />
+    <result column="relationship" property="relationship" jdbcType="VARCHAR" />
+    <result column="contact_number" property="contactNumber" jdbcType="VARCHAR" />
+    <result column="labor_type" property="laborType" jdbcType="INTEGER" />
+    <result column="employing_unit" property="employingUnit" jdbcType="VARCHAR" />
+    <result column="employee_number" property="employeeNumber" jdbcType="VARCHAR" />
+    <result column="rank_code" property="rankCode" jdbcType="VARCHAR" />
+    <result column="ic_number" property="icNumber" jdbcType="VARCHAR" />
+    <result column="locatioin_city" property="locatioinCity" jdbcType="VARCHAR" />
+    <result column="company_live" property="companyLive" jdbcType="INTEGER" />
+    <result column="employee_area_id" property="employeeAreaId" jdbcType="INTEGER" />
+    <result column="employee_area" property="employeeArea" jdbcType="VARCHAR" />
+    <result column="induction_date" property="inductionDate" jdbcType="DATE" />
+    <result column="positive_date" property="positiveDate" jdbcType="DATE" />
+    <result column="actual_positive_date" property="actualPositiveDate" jdbcType="DATE" />
+    <result column="employment_type" property="employmentType" jdbcType="INTEGER" />
+    <result column="internship_date" property="internshipDate" jdbcType="DATE" />
+    <result column="nationality" property="nationality" jdbcType="INTEGER" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="trial_period" property="trialPeriod" jdbcType="VARCHAR" />
+    <result column="trial_date" property="trialDate" jdbcType="DATE" />
+    <result column="training_date" property="trainingDate" jdbcType="DATE" />
+    <result column="arrival_date" property="arrivalDate" jdbcType="DATE" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="working_years" property="workingYears" jdbcType="INTEGER" />
+    <result column="main_body" property="mainBody" jdbcType="VARCHAR" />
+    <result column="pic_url" property="picUrl" jdbcType="VARCHAR" />
+    <result column="marital_status" property="maritalStatus" jdbcType="INTEGER" />
+    <result column="education" property="education" jdbcType="INTEGER" />
+    <result column="politics_status" property="politicsStatus" jdbcType="INTEGER" />
+    <result column="physical_condition" property="physicalCondition" jdbcType="INTEGER" />
+    <result column="company_mobile" property="companyMobile" jdbcType="VARCHAR" />
+    <result column="private_mobile" property="privateMobile" jdbcType="VARCHAR" />
+    <result column="short_phone" property="shortPhone" jdbcType="VARCHAR" />
+    <result column="qq" property="qq" jdbcType="VARCHAR" />
+    <result column="webchat" property="webchat" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="native_place" property="nativePlace" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="DATE" />
+    <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="national" property="national" jdbcType="VARCHAR" />
+    <result column="native_type" property="nativeType" jdbcType="INTEGER" />
+    <result column="identity_type" property="identityType" jdbcType="INTEGER" />
+    <result column="identity_number" property="identityNumber" jdbcType="VARCHAR" />
+    <result column="identity_issuing_date" property="identityIssuingDate" jdbcType="DATE" />
+    <result column="identity_maturity_date" property="identityMaturityDate" jdbcType="DATE" />
+    <result column="identity_address" property="identityAddress" jdbcType="VARCHAR" />
+    <result column="current_address" property="currentAddress" jdbcType="VARCHAR" />
+    <result column="job_yeas" property="jobYeas" jdbcType="DECIMAL" />
+    <result column="english_level" property="englishLevel" jdbcType="INTEGER" />
+    <result column="professional_language" property="professionalLanguage" jdbcType="VARCHAR" />
+    <result column="qualification_certificate" property="qualificationCertificate" jdbcType="VARCHAR" />
+    <result column="criminal_record" property="criminalRecord" jdbcType="INTEGER" />
+    <result column="personnel_type" property="personnelType" jdbcType="INTEGER" />
+    <result column="develop_direction" property="developDirection" jdbcType="INTEGER" />
+    <result column="skills" property="skills" jdbcType="VARCHAR" />
+    <result column="apply_job" property="applyJob" jdbcType="VARCHAR" />
+    <result column="personal_interviewer_id" property="personalInterviewerId" jdbcType="BIGINT" />
+    <result column="personal_interviewer" property="personalInterviewer" jdbcType="VARCHAR" />
+    <result column="job_interviewer_id" property="jobInterviewerId" jdbcType="BIGINT" />
+    <result column="job_interviewer" property="jobInterviewer" jdbcType="VARCHAR" />
+    <result column="interviewer_opinion" property="interviewerOpinion" jdbcType="VARCHAR" />
+    <result column="introduce" property="introduce" jdbcType="INTEGER" />
+    <result column="introducer_id" property="introducerId" jdbcType="BIGINT" />
+    <result column="introducer" property="introducer" jdbcType="VARCHAR" />
+    <result column="relation" property="relation" jdbcType="VARCHAR" />
+    <result column="introduce_dept_id" property="introduceDeptId" jdbcType="INTEGER" />
+    <result column="introduce_dept" property="introduceDept" jdbcType="VARCHAR" />
+    <result column="introduce_duty_id" property="introduceDutyId" jdbcType="INTEGER" />
+    <result column="introduce_duty" property="introduceDuty" jdbcType="VARCHAR" />
+    <result column="departure_type" property="departureType" jdbcType="INTEGER" />
+    <result column="apply_date" property="applyDate" jdbcType="DATE" />
+    <result column="reason" property="reason" jdbcType="VARCHAR" />
+    <result column="departure_date" property="departureDate" jdbcType="DATE" />
+    <result column="liability" property="liability" jdbcType="INTEGER" />
+    <result column="interview_record" property="interviewRecord" jdbcType="VARCHAR" />
+    <result column="ext1" property="ext1" jdbcType="INTEGER" />
+    <result column="ext2" property="ext2" jdbcType="INTEGER" />
+    <result column="ext3" property="ext3" jdbcType="VARCHAR" />
+    <result column="ext4" property="ext4" jdbcType="VARCHAR" />
+    <result column="trace_id" property="traceId" jdbcType="VARCHAR" />
+    <result column="enabled_flag" property="enabledFlag" jdbcType="INTEGER" />
+    <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+    <result column="creation_date" property="creationDate" jdbcType="TIMESTAMP" />
+    <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
+    <result column="updation_date" property="updationDate" jdbcType="TIMESTAMP" />
+    <result column="departure_status" property="departureStatus" jdbcType="INTEGER" />
+    <result column="org_code" property="orgCode" jdbcType="VARCHAR" />
+    <result column="message_flag" property="messageFlag" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, duty_id, duty, department_id, department, higher_department_id, higher_department, 
+    leader_id, leader, in_office, office_status, infomation_type, emergency_contact, 
+    relationship, contact_number, labor_type, employing_unit, employee_number, rank_code, 
+    ic_number, locatioin_city, company_live, employee_area_id, employee_area, induction_date, 
+    positive_date, actual_positive_date, employment_type, internship_date, nationality, 
+    email, trial_period, trial_date, training_date, arrival_date, age, working_years, 
+    main_body, pic_url, marital_status, education, politics_status, physical_condition, 
+    company_mobile, private_mobile, short_phone, qq, webchat, phone, native_place, birthday, 
+    sex, national, native_type, identity_type, identity_number, identity_issuing_date, 
+    identity_maturity_date, identity_address, current_address, job_yeas, english_level, 
+    professional_language, qualification_certificate, criminal_record, personnel_type, 
+    develop_direction, skills, apply_job, personal_interviewer_id, personal_interviewer, 
+    job_interviewer_id, job_interviewer, interviewer_opinion, introduce, introducer_id, 
+    introducer, relation, introduce_dept_id, introduce_dept, introduce_duty_id, introduce_duty, 
+    departure_type, apply_date, reason, departure_date, liability, interview_record, 
+    ext1, ext2, ext3, ext4, trace_id, enabled_flag, created_by, creation_date, updated_by, 
+    updation_date, departure_status, org_code, message_flag
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from employee
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from employee
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mv.entity.Employee" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into employee (name, duty_id, duty, 
+      department_id, department, higher_department_id, 
+      higher_department, leader_id, leader, 
+      in_office, office_status, infomation_type, 
+      emergency_contact, relationship, contact_number, 
+      labor_type, employing_unit, employee_number, 
+      rank_code, ic_number, locatioin_city, 
+      company_live, employee_area_id, employee_area, 
+      induction_date, positive_date, actual_positive_date, 
+      employment_type, internship_date, nationality, 
+      email, trial_period, trial_date, 
+      training_date, arrival_date, age, 
+      working_years, main_body, pic_url, 
+      marital_status, education, politics_status, 
+      physical_condition, company_mobile, private_mobile, 
+      short_phone, qq, webchat, 
+      phone, native_place, birthday, 
+      sex, national, native_type, 
+      identity_type, identity_number, identity_issuing_date, 
+      identity_maturity_date, identity_address, current_address, 
+      job_yeas, english_level, professional_language, 
+      qualification_certificate, criminal_record, 
+      personnel_type, develop_direction, skills, 
+      apply_job, personal_interviewer_id, personal_interviewer, 
+      job_interviewer_id, job_interviewer, interviewer_opinion, 
+      introduce, introducer_id, introducer, 
+      relation, introduce_dept_id, introduce_dept, 
+      introduce_duty_id, introduce_duty, departure_type, 
+      apply_date, reason, departure_date, 
+      liability, interview_record, ext1, 
+      ext2, ext3, ext4, trace_id, 
+      enabled_flag, created_by, creation_date, 
+      updated_by, updation_date, departure_status, 
+      org_code, message_flag)
+    values (#{name,jdbcType=VARCHAR}, #{dutyId,jdbcType=INTEGER}, #{duty,jdbcType=VARCHAR}, 
+      #{departmentId,jdbcType=INTEGER}, #{department,jdbcType=VARCHAR}, #{higherDepartmentId,jdbcType=INTEGER}, 
+      #{higherDepartment,jdbcType=VARCHAR}, #{leaderId,jdbcType=BIGINT}, #{leader,jdbcType=VARCHAR}, 
+      #{inOffice,jdbcType=INTEGER}, #{officeStatus,jdbcType=INTEGER}, #{infomationType,jdbcType=INTEGER}, 
+      #{emergencyContact,jdbcType=VARCHAR}, #{relationship,jdbcType=VARCHAR}, #{contactNumber,jdbcType=VARCHAR}, 
+      #{laborType,jdbcType=INTEGER}, #{employingUnit,jdbcType=VARCHAR}, #{employeeNumber,jdbcType=VARCHAR}, 
+      #{rankCode,jdbcType=VARCHAR}, #{icNumber,jdbcType=VARCHAR}, #{locatioinCity,jdbcType=VARCHAR}, 
+      #{companyLive,jdbcType=INTEGER}, #{employeeAreaId,jdbcType=INTEGER}, #{employeeArea,jdbcType=VARCHAR}, 
+      #{inductionDate,jdbcType=DATE}, #{positiveDate,jdbcType=DATE}, #{actualPositiveDate,jdbcType=DATE}, 
+      #{employmentType,jdbcType=INTEGER}, #{internshipDate,jdbcType=DATE}, #{nationality,jdbcType=INTEGER}, 
+      #{email,jdbcType=VARCHAR}, #{trialPeriod,jdbcType=VARCHAR}, #{trialDate,jdbcType=DATE}, 
+      #{trainingDate,jdbcType=DATE}, #{arrivalDate,jdbcType=DATE}, #{age,jdbcType=INTEGER}, 
+      #{workingYears,jdbcType=INTEGER}, #{mainBody,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR}, 
+      #{maritalStatus,jdbcType=INTEGER}, #{education,jdbcType=INTEGER}, #{politicsStatus,jdbcType=INTEGER}, 
+      #{physicalCondition,jdbcType=INTEGER}, #{companyMobile,jdbcType=VARCHAR}, #{privateMobile,jdbcType=VARCHAR}, 
+      #{shortPhone,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, #{webchat,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{nativePlace,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, 
+      #{sex,jdbcType=INTEGER}, #{national,jdbcType=VARCHAR}, #{nativeType,jdbcType=INTEGER}, 
+      #{identityType,jdbcType=INTEGER}, #{identityNumber,jdbcType=VARCHAR}, #{identityIssuingDate,jdbcType=DATE}, 
+      #{identityMaturityDate,jdbcType=DATE}, #{identityAddress,jdbcType=VARCHAR}, #{currentAddress,jdbcType=VARCHAR}, 
+      #{jobYeas,jdbcType=DECIMAL}, #{englishLevel,jdbcType=INTEGER}, #{professionalLanguage,jdbcType=VARCHAR}, 
+      #{qualificationCertificate,jdbcType=VARCHAR}, #{criminalRecord,jdbcType=INTEGER}, 
+      #{personnelType,jdbcType=INTEGER}, #{developDirection,jdbcType=INTEGER}, #{skills,jdbcType=VARCHAR}, 
+      #{applyJob,jdbcType=VARCHAR}, #{personalInterviewerId,jdbcType=BIGINT}, #{personalInterviewer,jdbcType=VARCHAR}, 
+      #{jobInterviewerId,jdbcType=BIGINT}, #{jobInterviewer,jdbcType=VARCHAR}, #{interviewerOpinion,jdbcType=VARCHAR}, 
+      #{introduce,jdbcType=INTEGER}, #{introducerId,jdbcType=BIGINT}, #{introducer,jdbcType=VARCHAR}, 
+      #{relation,jdbcType=VARCHAR}, #{introduceDeptId,jdbcType=INTEGER}, #{introduceDept,jdbcType=VARCHAR}, 
+      #{introduceDutyId,jdbcType=INTEGER}, #{introduceDuty,jdbcType=VARCHAR}, #{departureType,jdbcType=INTEGER}, 
+      #{applyDate,jdbcType=DATE}, #{reason,jdbcType=VARCHAR}, #{departureDate,jdbcType=DATE}, 
+      #{liability,jdbcType=INTEGER}, #{interviewRecord,jdbcType=VARCHAR}, #{ext1,jdbcType=INTEGER}, 
+      #{ext2,jdbcType=INTEGER}, #{ext3,jdbcType=VARCHAR}, #{ext4,jdbcType=VARCHAR}, #{traceId,jdbcType=VARCHAR}, 
+      #{enabledFlag,jdbcType=INTEGER}, #{createdBy,jdbcType=VARCHAR}, #{creationDate,jdbcType=TIMESTAMP}, 
+      #{updatedBy,jdbcType=VARCHAR}, #{updationDate,jdbcType=TIMESTAMP}, #{departureStatus,jdbcType=INTEGER}, 
+      #{orgCode,jdbcType=VARCHAR}, #{messageFlag,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mv.entity.Employee" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into employee
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="dutyId != null" >
+        duty_id,
+      </if>
+      <if test="duty != null" >
+        duty,
+      </if>
+      <if test="departmentId != null" >
+        department_id,
+      </if>
+      <if test="department != null" >
+        department,
+      </if>
+      <if test="higherDepartmentId != null" >
+        higher_department_id,
+      </if>
+      <if test="higherDepartment != null" >
+        higher_department,
+      </if>
+      <if test="leaderId != null" >
+        leader_id,
+      </if>
+      <if test="leader != null" >
+        leader,
+      </if>
+      <if test="inOffice != null" >
+        in_office,
+      </if>
+      <if test="officeStatus != null" >
+        office_status,
+      </if>
+      <if test="infomationType != null" >
+        infomation_type,
+      </if>
+      <if test="emergencyContact != null" >
+        emergency_contact,
+      </if>
+      <if test="relationship != null" >
+        relationship,
+      </if>
+      <if test="contactNumber != null" >
+        contact_number,
+      </if>
+      <if test="laborType != null" >
+        labor_type,
+      </if>
+      <if test="employingUnit != null" >
+        employing_unit,
+      </if>
+      <if test="employeeNumber != null" >
+        employee_number,
+      </if>
+      <if test="rankCode != null" >
+        rank_code,
+      </if>
+      <if test="icNumber != null" >
+        ic_number,
+      </if>
+      <if test="locatioinCity != null" >
+        locatioin_city,
+      </if>
+      <if test="companyLive != null" >
+        company_live,
+      </if>
+      <if test="employeeAreaId != null" >
+        employee_area_id,
+      </if>
+      <if test="employeeArea != null" >
+        employee_area,
+      </if>
+      <if test="inductionDate != null" >
+        induction_date,
+      </if>
+      <if test="positiveDate != null" >
+        positive_date,
+      </if>
+      <if test="actualPositiveDate != null" >
+        actual_positive_date,
+      </if>
+      <if test="employmentType != null" >
+        employment_type,
+      </if>
+      <if test="internshipDate != null" >
+        internship_date,
+      </if>
+      <if test="nationality != null" >
+        nationality,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="trialPeriod != null" >
+        trial_period,
+      </if>
+      <if test="trialDate != null" >
+        trial_date,
+      </if>
+      <if test="trainingDate != null" >
+        training_date,
+      </if>
+      <if test="arrivalDate != null" >
+        arrival_date,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="workingYears != null" >
+        working_years,
+      </if>
+      <if test="mainBody != null" >
+        main_body,
+      </if>
+      <if test="picUrl != null" >
+        pic_url,
+      </if>
+      <if test="maritalStatus != null" >
+        marital_status,
+      </if>
+      <if test="education != null" >
+        education,
+      </if>
+      <if test="politicsStatus != null" >
+        politics_status,
+      </if>
+      <if test="physicalCondition != null" >
+        physical_condition,
+      </if>
+      <if test="companyMobile != null" >
+        company_mobile,
+      </if>
+      <if test="privateMobile != null" >
+        private_mobile,
+      </if>
+      <if test="shortPhone != null" >
+        short_phone,
+      </if>
+      <if test="qq != null" >
+        qq,
+      </if>
+      <if test="webchat != null" >
+        webchat,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="nativePlace != null" >
+        native_place,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="national != null" >
+        national,
+      </if>
+      <if test="nativeType != null" >
+        native_type,
+      </if>
+      <if test="identityType != null" >
+        identity_type,
+      </if>
+      <if test="identityNumber != null" >
+        identity_number,
+      </if>
+      <if test="identityIssuingDate != null" >
+        identity_issuing_date,
+      </if>
+      <if test="identityMaturityDate != null" >
+        identity_maturity_date,
+      </if>
+      <if test="identityAddress != null" >
+        identity_address,
+      </if>
+      <if test="currentAddress != null" >
+        current_address,
+      </if>
+      <if test="jobYeas != null" >
+        job_yeas,
+      </if>
+      <if test="englishLevel != null" >
+        english_level,
+      </if>
+      <if test="professionalLanguage != null" >
+        professional_language,
+      </if>
+      <if test="qualificationCertificate != null" >
+        qualification_certificate,
+      </if>
+      <if test="criminalRecord != null" >
+        criminal_record,
+      </if>
+      <if test="personnelType != null" >
+        personnel_type,
+      </if>
+      <if test="developDirection != null" >
+        develop_direction,
+      </if>
+      <if test="skills != null" >
+        skills,
+      </if>
+      <if test="applyJob != null" >
+        apply_job,
+      </if>
+      <if test="personalInterviewerId != null" >
+        personal_interviewer_id,
+      </if>
+      <if test="personalInterviewer != null" >
+        personal_interviewer,
+      </if>
+      <if test="jobInterviewerId != null" >
+        job_interviewer_id,
+      </if>
+      <if test="jobInterviewer != null" >
+        job_interviewer,
+      </if>
+      <if test="interviewerOpinion != null" >
+        interviewer_opinion,
+      </if>
+      <if test="introduce != null" >
+        introduce,
+      </if>
+      <if test="introducerId != null" >
+        introducer_id,
+      </if>
+      <if test="introducer != null" >
+        introducer,
+      </if>
+      <if test="relation != null" >
+        relation,
+      </if>
+      <if test="introduceDeptId != null" >
+        introduce_dept_id,
+      </if>
+      <if test="introduceDept != null" >
+        introduce_dept,
+      </if>
+      <if test="introduceDutyId != null" >
+        introduce_duty_id,
+      </if>
+      <if test="introduceDuty != null" >
+        introduce_duty,
+      </if>
+      <if test="departureType != null" >
+        departure_type,
+      </if>
+      <if test="applyDate != null" >
+        apply_date,
+      </if>
+      <if test="reason != null" >
+        reason,
+      </if>
+      <if test="departureDate != null" >
+        departure_date,
+      </if>
+      <if test="liability != null" >
+        liability,
+      </if>
+      <if test="interviewRecord != null" >
+        interview_record,
+      </if>
+      <if test="ext1 != null" >
+        ext1,
+      </if>
+      <if test="ext2 != null" >
+        ext2,
+      </if>
+      <if test="ext3 != null" >
+        ext3,
+      </if>
+      <if test="ext4 != null" >
+        ext4,
+      </if>
+      <if test="traceId != null" >
+        trace_id,
+      </if>
+      <if test="enabledFlag != null" >
+        enabled_flag,
+      </if>
+      <if test="createdBy != null" >
+        created_by,
+      </if>
+      <if test="creationDate != null" >
+        creation_date,
+      </if>
+      <if test="updatedBy != null" >
+        updated_by,
+      </if>
+      <if test="updationDate != null" >
+        updation_date,
+      </if>
+      <if test="departureStatus != null" >
+        departure_status,
+      </if>
+      <if test="orgCode != null" >
+        org_code,
+      </if>
+      <if test="messageFlag != null" >
+        message_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyId != null" >
+        #{dutyId,jdbcType=INTEGER},
+      </if>
+      <if test="duty != null" >
+        #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null" >
+        #{departmentId,jdbcType=INTEGER},
+      </if>
+      <if test="department != null" >
+        #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="higherDepartmentId != null" >
+        #{higherDepartmentId,jdbcType=INTEGER},
+      </if>
+      <if test="higherDepartment != null" >
+        #{higherDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="leaderId != null" >
+        #{leaderId,jdbcType=BIGINT},
+      </if>
+      <if test="leader != null" >
+        #{leader,jdbcType=VARCHAR},
+      </if>
+      <if test="inOffice != null" >
+        #{inOffice,jdbcType=INTEGER},
+      </if>
+      <if test="officeStatus != null" >
+        #{officeStatus,jdbcType=INTEGER},
+      </if>
+      <if test="infomationType != null" >
+        #{infomationType,jdbcType=INTEGER},
+      </if>
+      <if test="emergencyContact != null" >
+        #{emergencyContact,jdbcType=VARCHAR},
+      </if>
+      <if test="relationship != null" >
+        #{relationship,jdbcType=VARCHAR},
+      </if>
+      <if test="contactNumber != null" >
+        #{contactNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="laborType != null" >
+        #{laborType,jdbcType=INTEGER},
+      </if>
+      <if test="employingUnit != null" >
+        #{employingUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeNumber != null" >
+        #{employeeNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="rankCode != null" >
+        #{rankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="icNumber != null" >
+        #{icNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="locatioinCity != null" >
+        #{locatioinCity,jdbcType=VARCHAR},
+      </if>
+      <if test="companyLive != null" >
+        #{companyLive,jdbcType=INTEGER},
+      </if>
+      <if test="employeeAreaId != null" >
+        #{employeeAreaId,jdbcType=INTEGER},
+      </if>
+      <if test="employeeArea != null" >
+        #{employeeArea,jdbcType=VARCHAR},
+      </if>
+      <if test="inductionDate != null" >
+        #{inductionDate,jdbcType=DATE},
+      </if>
+      <if test="positiveDate != null" >
+        #{positiveDate,jdbcType=DATE},
+      </if>
+      <if test="actualPositiveDate != null" >
+        #{actualPositiveDate,jdbcType=DATE},
+      </if>
+      <if test="employmentType != null" >
+        #{employmentType,jdbcType=INTEGER},
+      </if>
+      <if test="internshipDate != null" >
+        #{internshipDate,jdbcType=DATE},
+      </if>
+      <if test="nationality != null" >
+        #{nationality,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="trialPeriod != null" >
+        #{trialPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="trialDate != null" >
+        #{trialDate,jdbcType=DATE},
+      </if>
+      <if test="trainingDate != null" >
+        #{trainingDate,jdbcType=DATE},
+      </if>
+      <if test="arrivalDate != null" >
+        #{arrivalDate,jdbcType=DATE},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="workingYears != null" >
+        #{workingYears,jdbcType=INTEGER},
+      </if>
+      <if test="mainBody != null" >
+        #{mainBody,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrl != null" >
+        #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="maritalStatus != null" >
+        #{maritalStatus,jdbcType=INTEGER},
+      </if>
+      <if test="education != null" >
+        #{education,jdbcType=INTEGER},
+      </if>
+      <if test="politicsStatus != null" >
+        #{politicsStatus,jdbcType=INTEGER},
+      </if>
+      <if test="physicalCondition != null" >
+        #{physicalCondition,jdbcType=INTEGER},
+      </if>
+      <if test="companyMobile != null" >
+        #{companyMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="privateMobile != null" >
+        #{privateMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="shortPhone != null" >
+        #{shortPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null" >
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="webchat != null" >
+        #{webchat,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="nativePlace != null" >
+        #{nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="national != null" >
+        #{national,jdbcType=VARCHAR},
+      </if>
+      <if test="nativeType != null" >
+        #{nativeType,jdbcType=INTEGER},
+      </if>
+      <if test="identityType != null" >
+        #{identityType,jdbcType=INTEGER},
+      </if>
+      <if test="identityNumber != null" >
+        #{identityNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="identityIssuingDate != null" >
+        #{identityIssuingDate,jdbcType=DATE},
+      </if>
+      <if test="identityMaturityDate != null" >
+        #{identityMaturityDate,jdbcType=DATE},
+      </if>
+      <if test="identityAddress != null" >
+        #{identityAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="currentAddress != null" >
+        #{currentAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="jobYeas != null" >
+        #{jobYeas,jdbcType=DECIMAL},
+      </if>
+      <if test="englishLevel != null" >
+        #{englishLevel,jdbcType=INTEGER},
+      </if>
+      <if test="professionalLanguage != null" >
+        #{professionalLanguage,jdbcType=VARCHAR},
+      </if>
+      <if test="qualificationCertificate != null" >
+        #{qualificationCertificate,jdbcType=VARCHAR},
+      </if>
+      <if test="criminalRecord != null" >
+        #{criminalRecord,jdbcType=INTEGER},
+      </if>
+      <if test="personnelType != null" >
+        #{personnelType,jdbcType=INTEGER},
+      </if>
+      <if test="developDirection != null" >
+        #{developDirection,jdbcType=INTEGER},
+      </if>
+      <if test="skills != null" >
+        #{skills,jdbcType=VARCHAR},
+      </if>
+      <if test="applyJob != null" >
+        #{applyJob,jdbcType=VARCHAR},
+      </if>
+      <if test="personalInterviewerId != null" >
+        #{personalInterviewerId,jdbcType=BIGINT},
+      </if>
+      <if test="personalInterviewer != null" >
+        #{personalInterviewer,jdbcType=VARCHAR},
+      </if>
+      <if test="jobInterviewerId != null" >
+        #{jobInterviewerId,jdbcType=BIGINT},
+      </if>
+      <if test="jobInterviewer != null" >
+        #{jobInterviewer,jdbcType=VARCHAR},
+      </if>
+      <if test="interviewerOpinion != null" >
+        #{interviewerOpinion,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null" >
+        #{introduce,jdbcType=INTEGER},
+      </if>
+      <if test="introducerId != null" >
+        #{introducerId,jdbcType=BIGINT},
+      </if>
+      <if test="introducer != null" >
+        #{introducer,jdbcType=VARCHAR},
+      </if>
+      <if test="relation != null" >
+        #{relation,jdbcType=VARCHAR},
+      </if>
+      <if test="introduceDeptId != null" >
+        #{introduceDeptId,jdbcType=INTEGER},
+      </if>
+      <if test="introduceDept != null" >
+        #{introduceDept,jdbcType=VARCHAR},
+      </if>
+      <if test="introduceDutyId != null" >
+        #{introduceDutyId,jdbcType=INTEGER},
+      </if>
+      <if test="introduceDuty != null" >
+        #{introduceDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="departureType != null" >
+        #{departureType,jdbcType=INTEGER},
+      </if>
+      <if test="applyDate != null" >
+        #{applyDate,jdbcType=DATE},
+      </if>
+      <if test="reason != null" >
+        #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="departureDate != null" >
+        #{departureDate,jdbcType=DATE},
+      </if>
+      <if test="liability != null" >
+        #{liability,jdbcType=INTEGER},
+      </if>
+      <if test="interviewRecord != null" >
+        #{interviewRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        #{ext1,jdbcType=INTEGER},
+      </if>
+      <if test="ext2 != null" >
+        #{ext2,jdbcType=INTEGER},
+      </if>
+      <if test="ext3 != null" >
+        #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="traceId != null" >
+        #{traceId,jdbcType=VARCHAR},
+      </if>
+      <if test="enabledFlag != null" >
+        #{enabledFlag,jdbcType=INTEGER},
+      </if>
+      <if test="createdBy != null" >
+        #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="creationDate != null" >
+        #{creationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedBy != null" >
+        #{updatedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updationDate != null" >
+        #{updationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="departureStatus != null" >
+        #{departureStatus,jdbcType=INTEGER},
+      </if>
+      <if test="orgCode != null" >
+        #{orgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="messageFlag != null" >
+        #{messageFlag,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mv.entity.Employee" >
+    update employee
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyId != null" >
+        duty_id = #{dutyId,jdbcType=INTEGER},
+      </if>
+      <if test="duty != null" >
+        duty = #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null" >
+        department_id = #{departmentId,jdbcType=INTEGER},
+      </if>
+      <if test="department != null" >
+        department = #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="higherDepartmentId != null" >
+        higher_department_id = #{higherDepartmentId,jdbcType=INTEGER},
+      </if>
+      <if test="higherDepartment != null" >
+        higher_department = #{higherDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="leaderId != null" >
+        leader_id = #{leaderId,jdbcType=BIGINT},
+      </if>
+      <if test="leader != null" >
+        leader = #{leader,jdbcType=VARCHAR},
+      </if>
+      <if test="inOffice != null" >
+        in_office = #{inOffice,jdbcType=INTEGER},
+      </if>
+      <if test="officeStatus != null" >
+        office_status = #{officeStatus,jdbcType=INTEGER},
+      </if>
+      <if test="infomationType != null" >
+        infomation_type = #{infomationType,jdbcType=INTEGER},
+      </if>
+      <if test="emergencyContact != null" >
+        emergency_contact = #{emergencyContact,jdbcType=VARCHAR},
+      </if>
+      <if test="relationship != null" >
+        relationship = #{relationship,jdbcType=VARCHAR},
+      </if>
+      <if test="contactNumber != null" >
+        contact_number = #{contactNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="laborType != null" >
+        labor_type = #{laborType,jdbcType=INTEGER},
+      </if>
+      <if test="employingUnit != null" >
+        employing_unit = #{employingUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeNumber != null" >
+        employee_number = #{employeeNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="rankCode != null" >
+        rank_code = #{rankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="icNumber != null" >
+        ic_number = #{icNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="locatioinCity != null" >
+        locatioin_city = #{locatioinCity,jdbcType=VARCHAR},
+      </if>
+      <if test="companyLive != null" >
+        company_live = #{companyLive,jdbcType=INTEGER},
+      </if>
+      <if test="employeeAreaId != null" >
+        employee_area_id = #{employeeAreaId,jdbcType=INTEGER},
+      </if>
+      <if test="employeeArea != null" >
+        employee_area = #{employeeArea,jdbcType=VARCHAR},
+      </if>
+      <if test="inductionDate != null" >
+        induction_date = #{inductionDate,jdbcType=DATE},
+      </if>
+      <if test="positiveDate != null" >
+        positive_date = #{positiveDate,jdbcType=DATE},
+      </if>
+      <if test="actualPositiveDate != null" >
+        actual_positive_date = #{actualPositiveDate,jdbcType=DATE},
+      </if>
+      <if test="employmentType != null" >
+        employment_type = #{employmentType,jdbcType=INTEGER},
+      </if>
+      <if test="internshipDate != null" >
+        internship_date = #{internshipDate,jdbcType=DATE},
+      </if>
+      <if test="nationality != null" >
+        nationality = #{nationality,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="trialPeriod != null" >
+        trial_period = #{trialPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="trialDate != null" >
+        trial_date = #{trialDate,jdbcType=DATE},
+      </if>
+      <if test="trainingDate != null" >
+        training_date = #{trainingDate,jdbcType=DATE},
+      </if>
+      <if test="arrivalDate != null" >
+        arrival_date = #{arrivalDate,jdbcType=DATE},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="workingYears != null" >
+        working_years = #{workingYears,jdbcType=INTEGER},
+      </if>
+      <if test="mainBody != null" >
+        main_body = #{mainBody,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrl != null" >
+        pic_url = #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="maritalStatus != null" >
+        marital_status = #{maritalStatus,jdbcType=INTEGER},
+      </if>
+      <if test="education != null" >
+        education = #{education,jdbcType=INTEGER},
+      </if>
+      <if test="politicsStatus != null" >
+        politics_status = #{politicsStatus,jdbcType=INTEGER},
+      </if>
+      <if test="physicalCondition != null" >
+        physical_condition = #{physicalCondition,jdbcType=INTEGER},
+      </if>
+      <if test="companyMobile != null" >
+        company_mobile = #{companyMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="privateMobile != null" >
+        private_mobile = #{privateMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="shortPhone != null" >
+        short_phone = #{shortPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null" >
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="webchat != null" >
+        webchat = #{webchat,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="nativePlace != null" >
+        native_place = #{nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="national != null" >
+        national = #{national,jdbcType=VARCHAR},
+      </if>
+      <if test="nativeType != null" >
+        native_type = #{nativeType,jdbcType=INTEGER},
+      </if>
+      <if test="identityType != null" >
+        identity_type = #{identityType,jdbcType=INTEGER},
+      </if>
+      <if test="identityNumber != null" >
+        identity_number = #{identityNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="identityIssuingDate != null" >
+        identity_issuing_date = #{identityIssuingDate,jdbcType=DATE},
+      </if>
+      <if test="identityMaturityDate != null" >
+        identity_maturity_date = #{identityMaturityDate,jdbcType=DATE},
+      </if>
+      <if test="identityAddress != null" >
+        identity_address = #{identityAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="currentAddress != null" >
+        current_address = #{currentAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="jobYeas != null" >
+        job_yeas = #{jobYeas,jdbcType=DECIMAL},
+      </if>
+      <if test="englishLevel != null" >
+        english_level = #{englishLevel,jdbcType=INTEGER},
+      </if>
+      <if test="professionalLanguage != null" >
+        professional_language = #{professionalLanguage,jdbcType=VARCHAR},
+      </if>
+      <if test="qualificationCertificate != null" >
+        qualification_certificate = #{qualificationCertificate,jdbcType=VARCHAR},
+      </if>
+      <if test="criminalRecord != null" >
+        criminal_record = #{criminalRecord,jdbcType=INTEGER},
+      </if>
+      <if test="personnelType != null" >
+        personnel_type = #{personnelType,jdbcType=INTEGER},
+      </if>
+      <if test="developDirection != null" >
+        develop_direction = #{developDirection,jdbcType=INTEGER},
+      </if>
+      <if test="skills != null" >
+        skills = #{skills,jdbcType=VARCHAR},
+      </if>
+      <if test="applyJob != null" >
+        apply_job = #{applyJob,jdbcType=VARCHAR},
+      </if>
+      <if test="personalInterviewerId != null" >
+        personal_interviewer_id = #{personalInterviewerId,jdbcType=BIGINT},
+      </if>
+      <if test="personalInterviewer != null" >
+        personal_interviewer = #{personalInterviewer,jdbcType=VARCHAR},
+      </if>
+      <if test="jobInterviewerId != null" >
+        job_interviewer_id = #{jobInterviewerId,jdbcType=BIGINT},
+      </if>
+      <if test="jobInterviewer != null" >
+        job_interviewer = #{jobInterviewer,jdbcType=VARCHAR},
+      </if>
+      <if test="interviewerOpinion != null" >
+        interviewer_opinion = #{interviewerOpinion,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null" >
+        introduce = #{introduce,jdbcType=INTEGER},
+      </if>
+      <if test="introducerId != null" >
+        introducer_id = #{introducerId,jdbcType=BIGINT},
+      </if>
+      <if test="introducer != null" >
+        introducer = #{introducer,jdbcType=VARCHAR},
+      </if>
+      <if test="relation != null" >
+        relation = #{relation,jdbcType=VARCHAR},
+      </if>
+      <if test="introduceDeptId != null" >
+        introduce_dept_id = #{introduceDeptId,jdbcType=INTEGER},
+      </if>
+      <if test="introduceDept != null" >
+        introduce_dept = #{introduceDept,jdbcType=VARCHAR},
+      </if>
+      <if test="introduceDutyId != null" >
+        introduce_duty_id = #{introduceDutyId,jdbcType=INTEGER},
+      </if>
+      <if test="introduceDuty != null" >
+        introduce_duty = #{introduceDuty,jdbcType=VARCHAR},
+      </if>
+      <if test="departureType != null" >
+        departure_type = #{departureType,jdbcType=INTEGER},
+      </if>
+      <if test="applyDate != null" >
+        apply_date = #{applyDate,jdbcType=DATE},
+      </if>
+      <if test="reason != null" >
+        reason = #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="departureDate != null" >
+        departure_date = #{departureDate,jdbcType=DATE},
+      </if>
+      <if test="liability != null" >
+        liability = #{liability,jdbcType=INTEGER},
+      </if>
+      <if test="interviewRecord != null" >
+        interview_record = #{interviewRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null" >
+        ext1 = #{ext1,jdbcType=INTEGER},
+      </if>
+      <if test="ext2 != null" >
+        ext2 = #{ext2,jdbcType=INTEGER},
+      </if>
+      <if test="ext3 != null" >
+        ext3 = #{ext3,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4 != null" >
+        ext4 = #{ext4,jdbcType=VARCHAR},
+      </if>
+      <if test="traceId != null" >
+        trace_id = #{traceId,jdbcType=VARCHAR},
+      </if>
+      <if test="enabledFlag != null" >
+        enabled_flag = #{enabledFlag,jdbcType=INTEGER},
+      </if>
+      <if test="createdBy != null" >
+        created_by = #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="creationDate != null" >
+        creation_date = #{creationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedBy != null" >
+        updated_by = #{updatedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updationDate != null" >
+        updation_date = #{updationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="departureStatus != null" >
+        departure_status = #{departureStatus,jdbcType=INTEGER},
+      </if>
+      <if test="orgCode != null" >
+        org_code = #{orgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="messageFlag != null" >
+        message_flag = #{messageFlag,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mv.entity.Employee" >
+    update employee
+    set name = #{name,jdbcType=VARCHAR},
+      duty_id = #{dutyId,jdbcType=INTEGER},
+      duty = #{duty,jdbcType=VARCHAR},
+      department_id = #{departmentId,jdbcType=INTEGER},
+      department = #{department,jdbcType=VARCHAR},
+      higher_department_id = #{higherDepartmentId,jdbcType=INTEGER},
+      higher_department = #{higherDepartment,jdbcType=VARCHAR},
+      leader_id = #{leaderId,jdbcType=BIGINT},
+      leader = #{leader,jdbcType=VARCHAR},
+      in_office = #{inOffice,jdbcType=INTEGER},
+      office_status = #{officeStatus,jdbcType=INTEGER},
+      infomation_type = #{infomationType,jdbcType=INTEGER},
+      emergency_contact = #{emergencyContact,jdbcType=VARCHAR},
+      relationship = #{relationship,jdbcType=VARCHAR},
+      contact_number = #{contactNumber,jdbcType=VARCHAR},
+      labor_type = #{laborType,jdbcType=INTEGER},
+      employing_unit = #{employingUnit,jdbcType=VARCHAR},
+      employee_number = #{employeeNumber,jdbcType=VARCHAR},
+      rank_code = #{rankCode,jdbcType=VARCHAR},
+      ic_number = #{icNumber,jdbcType=VARCHAR},
+      locatioin_city = #{locatioinCity,jdbcType=VARCHAR},
+      company_live = #{companyLive,jdbcType=INTEGER},
+      employee_area_id = #{employeeAreaId,jdbcType=INTEGER},
+      employee_area = #{employeeArea,jdbcType=VARCHAR},
+      induction_date = #{inductionDate,jdbcType=DATE},
+      positive_date = #{positiveDate,jdbcType=DATE},
+      actual_positive_date = #{actualPositiveDate,jdbcType=DATE},
+      employment_type = #{employmentType,jdbcType=INTEGER},
+      internship_date = #{internshipDate,jdbcType=DATE},
+      nationality = #{nationality,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR},
+      trial_period = #{trialPeriod,jdbcType=VARCHAR},
+      trial_date = #{trialDate,jdbcType=DATE},
+      training_date = #{trainingDate,jdbcType=DATE},
+      arrival_date = #{arrivalDate,jdbcType=DATE},
+      age = #{age,jdbcType=INTEGER},
+      working_years = #{workingYears,jdbcType=INTEGER},
+      main_body = #{mainBody,jdbcType=VARCHAR},
+      pic_url = #{picUrl,jdbcType=VARCHAR},
+      marital_status = #{maritalStatus,jdbcType=INTEGER},
+      education = #{education,jdbcType=INTEGER},
+      politics_status = #{politicsStatus,jdbcType=INTEGER},
+      physical_condition = #{physicalCondition,jdbcType=INTEGER},
+      company_mobile = #{companyMobile,jdbcType=VARCHAR},
+      private_mobile = #{privateMobile,jdbcType=VARCHAR},
+      short_phone = #{shortPhone,jdbcType=VARCHAR},
+      qq = #{qq,jdbcType=VARCHAR},
+      webchat = #{webchat,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      native_place = #{nativePlace,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      sex = #{sex,jdbcType=INTEGER},
+      national = #{national,jdbcType=VARCHAR},
+      native_type = #{nativeType,jdbcType=INTEGER},
+      identity_type = #{identityType,jdbcType=INTEGER},
+      identity_number = #{identityNumber,jdbcType=VARCHAR},
+      identity_issuing_date = #{identityIssuingDate,jdbcType=DATE},
+      identity_maturity_date = #{identityMaturityDate,jdbcType=DATE},
+      identity_address = #{identityAddress,jdbcType=VARCHAR},
+      current_address = #{currentAddress,jdbcType=VARCHAR},
+      job_yeas = #{jobYeas,jdbcType=DECIMAL},
+      english_level = #{englishLevel,jdbcType=INTEGER},
+      professional_language = #{professionalLanguage,jdbcType=VARCHAR},
+      qualification_certificate = #{qualificationCertificate,jdbcType=VARCHAR},
+      criminal_record = #{criminalRecord,jdbcType=INTEGER},
+      personnel_type = #{personnelType,jdbcType=INTEGER},
+      develop_direction = #{developDirection,jdbcType=INTEGER},
+      skills = #{skills,jdbcType=VARCHAR},
+      apply_job = #{applyJob,jdbcType=VARCHAR},
+      personal_interviewer_id = #{personalInterviewerId,jdbcType=BIGINT},
+      personal_interviewer = #{personalInterviewer,jdbcType=VARCHAR},
+      job_interviewer_id = #{jobInterviewerId,jdbcType=BIGINT},
+      job_interviewer = #{jobInterviewer,jdbcType=VARCHAR},
+      interviewer_opinion = #{interviewerOpinion,jdbcType=VARCHAR},
+      introduce = #{introduce,jdbcType=INTEGER},
+      introducer_id = #{introducerId,jdbcType=BIGINT},
+      introducer = #{introducer,jdbcType=VARCHAR},
+      relation = #{relation,jdbcType=VARCHAR},
+      introduce_dept_id = #{introduceDeptId,jdbcType=INTEGER},
+      introduce_dept = #{introduceDept,jdbcType=VARCHAR},
+      introduce_duty_id = #{introduceDutyId,jdbcType=INTEGER},
+      introduce_duty = #{introduceDuty,jdbcType=VARCHAR},
+      departure_type = #{departureType,jdbcType=INTEGER},
+      apply_date = #{applyDate,jdbcType=DATE},
+      reason = #{reason,jdbcType=VARCHAR},
+      departure_date = #{departureDate,jdbcType=DATE},
+      liability = #{liability,jdbcType=INTEGER},
+      interview_record = #{interviewRecord,jdbcType=VARCHAR},
+      ext1 = #{ext1,jdbcType=INTEGER},
+      ext2 = #{ext2,jdbcType=INTEGER},
+      ext3 = #{ext3,jdbcType=VARCHAR},
+      ext4 = #{ext4,jdbcType=VARCHAR},
+      trace_id = #{traceId,jdbcType=VARCHAR},
+      enabled_flag = #{enabledFlag,jdbcType=INTEGER},
+      created_by = #{createdBy,jdbcType=VARCHAR},
+      creation_date = #{creationDate,jdbcType=TIMESTAMP},
+      updated_by = #{updatedBy,jdbcType=VARCHAR},
+      updation_date = #{updationDate,jdbcType=TIMESTAMP},
+      departure_status = #{departureStatus,jdbcType=INTEGER},
+      org_code = #{orgCode,jdbcType=VARCHAR},
+      message_flag = #{messageFlag,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
